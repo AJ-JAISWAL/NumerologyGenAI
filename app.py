@@ -1,40 +1,16 @@
 from langchain.chains import RetrievalQA
 from langchain_groq import ChatGroq
-from langchain.prompts import PromptTemplate
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from pymongo.mongo_client import MongoClient
 from langchain_mongodb.vectorstores import MongoDBAtlasVectorSearch
 import streamlit as st
 
+qrok_api_key="xxxxxxxxxxxx"
 
-
-custom_prompt_template = """Use the following pieces of information to answer the user's question.
-If you don't know the answer, just say that you don't know, don't try to make up an answer.
-
-Context: {context}
-Question: {question}
-
-Only return the helpful answer below and nothing else.
-Helpful answer:
-"""
-
-
-
-qrok_api_key="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"
-
-uri = "mongodb+srv://Numerology:mongodb123@cluster0.vxkz7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+uri = "xxxxx"
 client = MongoClient(uri)
-db = client["Numerology_embedding"]
-collection = db["content_embeddings"]
-
-
-def set_custom_prompt():
-    """
-    Prompt template for QA retrieval for each vectorstore
-    """
-    prompt = PromptTemplate(template=custom_prompt_template,
-                            input_variables=['context', 'question'])
-    return prompt
+db = client["xxxx"]
+collection = db["yyyy"]
 
 
 def load_llm():
@@ -63,8 +39,7 @@ def qa_bot():
         relevance_score_fn="cosine",
     )
     llm = load_llm()
-    qa_prompt = set_custom_prompt()
-    qa = retrieval_qa_chain(llm, qa_prompt, vector_store)
+    qa = retrieval_qa_chain(llm,query, vector_store)
     return qa
 
 
