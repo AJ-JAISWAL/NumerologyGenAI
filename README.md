@@ -1,6 +1,6 @@
 # NumerologyGenAI(Tantralogy)
 
-AyurParvani is a powerful tool designed to provide Numerology_ With Tantra, Ayurveda, and Astrology information by answering user queries using state-of-the-art language models and vector stores. This README will guide you through the setup and usage of the Tantralogy.
+NumerologyGenAI(Tantralogy) is a powerful tool designed to provide Numerology_ With Tantra, Ayurveda, and Astrology information by answering user queries using state-of-the-art language models and vector stores. This README will guide you through the setup and usage of the Tantralogy.
 
 ## Table of Contents
 
